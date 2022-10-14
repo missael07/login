@@ -1,0 +1,26 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start" >
+      <ion-back-button defaultHref="main/tabs/tab2" color="primary" mode="md"></ion-back-button>
+    </ion-buttons>
+    <ion-title color="primary">Asistencias de {{ alumno }}</ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content [fullscreen]="true" mode="ios">
+  <ion-grid fixed mode="ios">
+    <ion-row *ngIf="isLoading">
+      <ion-col class="ion-text-center">
+        <ion-spinner name="crescent"></ion-spinner>
+      </ion-col>
+    </ion-row>
+    <ion-row *ngIf="!isLoading">
+      <ion-col size="12" *ngFor="let asistencia of asistenciasAlumno">
+        <ion-card>
+          <ion-card-header class="text-center">
+            <ion-card-subtitle>{{ asistencia.date | date }}</ion-card-subtitle>
+          </ion-card-header>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>

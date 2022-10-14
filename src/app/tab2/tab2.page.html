@@ -1,0 +1,28 @@
+<ion-header collapse="condense">
+  <ion-toolbar>
+    <ion-title size="large">
+      Bienvenido {{ user }}
+    </ion-title>
+    <ion-content>
+      {{ user }}
+    </ion-content>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content >
+  <ion-buttons >
+    <ion-button class="btn-asistencia" (click)="registrarAsistencia()" shape="round"
+    expand="full"
+    size="small"
+    fill="outline"
+    color="primary">
+      <ion-icon slot="start" name="add"></ion-icon>
+      Registrar Asistencia
+    </ion-button>
+  </ion-buttons>
+  <ion-card>
+    <ion-card-header>
+      <ion-card-subtitle (click)="verAsistencias()"> Ver Asistencias Registradas</ion-card-subtitle>
+    </ion-card-header>
+  </ion-card>
+</ion-content>
